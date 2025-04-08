@@ -14,7 +14,7 @@
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
             <div class="bg-teal-500 p-6 flex justify-between items-center">
                 <div>
-                    <p class="text-4xl text-white font-bold">5</p>
+                    <p class="text-4xl text-white font-bold">{{ $totalReservations }}</p>
                     <p class="text-white">Data Pesanan</p>
                 </div>
                 <div>

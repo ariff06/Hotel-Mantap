@@ -21,6 +21,25 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        DB::table('users')->insert([
+            [
+                'nama' => 'admin',
+                'email' => 'admin@example.com',
+                'role' => 'admin',
+                'password' => Hash::make('qwe123'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nama' => 'resep',
+                'email' => 'resep@example.com',
+                'role' => 'resepsionis',
+                'password' => Hash::make('123'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
@@ -35,6 +54,7 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
     }
 
     /**

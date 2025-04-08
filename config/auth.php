@@ -35,12 +35,13 @@ return [
     |
     */
 
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+    
+    'guards' => [
+            'web' => [
+                'driver' => 'session',
+                'provider' => 'users',
+            ],
 
-        'guards' => [
             'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
@@ -68,7 +69,7 @@ return [
 
         'users' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => App\Models\User::class,
         ],
 
         'admins' => [

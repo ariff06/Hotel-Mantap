@@ -21,12 +21,28 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr>
-                    <td>1</td>
-                    <td>Atmin</td>
-                    <td>admin</td>
-                    <td>admin</td>
-                </tr> -->
+            @foreach($reservations as $reservation)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $reservation->guest_name }}</td>
+                        <td>{{ $reservation->check_in_date }}</td>
+                        <td>{{ $reservation->check_out_date }}</td>
+                        <td>{{ $reservation->room_type }}</td>
+                        <td>{{ $reservation->status }}</td>
+                        <td>
+                            <!-- Tambahkan aksi yang diperlukan, misalnya tombol untuk mengubah status -->
+                            @if($reservation->status == 'belum di konfirmasi')
+                            <form action="{{ route('reservations.update', $reservation->id) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-success">Konfirmasi</button>
+                            </form>
+                            @else
+                            <span class="badge badge-success">Sudah di konfirmasi</span>
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
             </tbody>
             </table>
         </div>

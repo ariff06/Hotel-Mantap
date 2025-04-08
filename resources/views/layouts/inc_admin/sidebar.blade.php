@@ -15,7 +15,8 @@
             <x-nav-item label="Dashboard" icon="fas fa-tachometer-alt" :link="route('dashboard')" />
             <x-nav-item label="User Admin" icon="fas fa-users" :link="route('admin.index')" />
             <x-nav-item label="Manage Rooms" icon="fas fa-tachometer-alt" :link="route('admin.rooms')" />
-            <x-nav-item label="Manage Facilitas" icon="fas fa-tachometer-alt" :link="route('admin.facilitas')" />
+            <x-nav-item label="Manage Facilities" icon="fas fa-tachometer-alt" :link="route('admin.facilitas')" />
+            <x-nav-item label="Manage Facilities Rooms" icon="fas fa-tachometer-alt" :link="route('admin.facilities_room')" />
 
         </ul>
       </nav>
